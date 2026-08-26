@@ -1,12 +1,14 @@
 apiVersion: v1 
-kind: Pod 
+kind: Pod       #Pod  declaration should be same if u give pod u will get error
 metadata:
-  name: pod-name
+  name: roboshop-pod      #this is pod name
   namespace: roboshop
 spec: 
   containers:
-  - name: pod-container 
+  - name: nginx-container     #this is container name 
     image: nginx
     ports:
     - containerPort: 80 
     
+  
+  
