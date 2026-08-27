@@ -1,0 +1,54 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata:
+  name: configmap-resource
+  namespace: roboshop                     #configmap block u can give in diff file 
+data:
+  COURSE: "DevOps"
+  TRAINER: "Siva"
+  DATABASE_URL: "jdbc:mysql://localhost:3306/mydb"
+  LOG_LEVEL: "INFO"
+---
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: ConfigMap-pod 
+  namespace: roboshop
+spec:
+  containers:
+  - name: configmap-container
+    image: nginx:mainline-alpine3.24-perl
+    ports:
+    - containerPort: 80
+# 1 way of getting configmap details through env 
+    env:
+    - name: course-name                   # env name anything 
+      valueFrom:
+       configMapRef:
+          name: configmap-resource        #above give configmap resorce name
+          key: COURSE                     #above give key name in data block 
+    - name: trainer-name
+      valueFrom: 
+        configMapRef:
+          name: configmap-resource        #above give configmap resorce name
+          key: TRAINER
+      #etc......remaining key value pairs 
+
+# # 2 way of getting configmap details through envFrom
+#     envFrom:
+#     - configMapRef:
+#         name: configmap-resource          #above give configmap resorce name
+
+# 3rd way of getting configmap details through voulumes 
+  # volumes:                  # write equal to containers block      
+  # - name: config-volume
+  #   configMap:
+  #     name: configmap-resource        #above give configmap resorce name 
+
+  #     items:                # Optional: selectively choose which keys to map to files
+  #     - key: DATABASE_URL
+  #       path: settings.json
+    
+  #   volumeMounts:                 # write equal to containers block  -name in containers block
+  #   - name: config-volume     #above given volume name 
+  #     mountPath: /etc/config      # Directory inside the container
