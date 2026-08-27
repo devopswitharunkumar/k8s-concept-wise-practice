@@ -1,0 +1,24 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: annotations-pod 
+  namespace: roboshop
+  labels:
+    name: pod-labels
+    env: dev 
+    project: roboshop
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    build-number: "325"
+    git-commit: "7a5f23d"
+    deployed-by: Jenkins
+    deployment-time: "2026-08-07T11:00"
+    jenkins-url: https:jenkins.com/catalogue/app 
+
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx 
+    ports:
+    - containerPort: 80
