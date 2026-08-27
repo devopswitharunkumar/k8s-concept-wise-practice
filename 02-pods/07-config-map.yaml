@@ -24,12 +24,12 @@ spec:
     env:
     - name: course-name                   # env name anything 
       valueFrom:
-        configMapRef:
+        configMapKeyRef:
           name: configmap-resource        #above give configmap resorce name
           key: COURSE                     #above give key name in data block 
     - name: trainer-name
       valueFrom: 
-        configMapRef:
+        configMapKeyRef:
           name: configmap-resource        #above give configmap resorce name
           key: TRAINER
       #etc......remaining key value pairs 
