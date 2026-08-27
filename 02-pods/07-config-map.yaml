@@ -24,7 +24,7 @@ spec:
     env:
     - name: course-name                   # env name anything 
       valueFrom:
-       configMapRef:
+        configMapRef:
           name: configmap-resource        #above give configmap resorce name
           key: COURSE                     #above give key name in data block 
     - name: trainer-name
