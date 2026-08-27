@@ -7,6 +7,8 @@ spec:
   containers:
   - name: requstandlimit-container 
     image: nginx:mainline-alpine3.24-perl
+    ports:
+    - containerPort: 80
     resources:
       requests:
         cpu: "100m"
