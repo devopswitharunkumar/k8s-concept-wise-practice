@@ -8,7 +8,7 @@ spec:
   - name: nginx-container 
     image: nginx
     ports:
-      containerPort: 80 
+    - containerPort: 80 
   - name: almalinux-cont     #side-car container 
     image: almalinux:8
     command: [ "echo", "this is sidecar container"]
