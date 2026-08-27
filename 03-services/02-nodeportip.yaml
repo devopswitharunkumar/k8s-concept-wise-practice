@@ -1,0 +1,30 @@
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: nodeportip-service
+  namespace: roboshop
+spec:
+  type: NodePort
+  selector:
+    matchLabels:
+      app: service 
+      type: nodeport  
+    ports:
+    - protocol: TCP 
+      port: 8080
+      targetPort: 80 
+---
+apiVersion: v1 
+kind: Pod 
+metadata: 
+  name: nodeportip-pod 
+  namespace: roboshop
+  labels:
+    app: service 
+    type: nodeport 
+spec:
+  containers:
+  - name: nodeport-cont
+    image: nginx:mainline-alpine3.24-perl
+    ports:
+    - containerPort: 80 
