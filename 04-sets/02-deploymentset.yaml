@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: deploymentset-cont
-        image: nginx
+        image: nginx:mainline-alpine3.24-perl
         ports:
         - containerPort: 80
 ---

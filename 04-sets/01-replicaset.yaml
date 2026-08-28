@@ -16,7 +16,7 @@ spec:
         type: replicaset
     spec:
       containers:
-      - name: rs-container
+      - name: replicaset-cont
         image: nginx:mainline-alpine3.24-perl
         ports:
         - containerPort: 80
