@@ -1,19 +1,4 @@
 apiVersion: v1 
-kind: Pod 
-metadata:
-  name: clusterip-pod
-  namespace: roboshop
-  labels: 
-    app: service 
-    type: clusterip 
-spec:
-  containers:
-  - name: clusterip-cont 
-    image: nginx:mainline-alpine3.24-perl
-    ports:
-    - containerPort: 80
----
-apiVersion: v1 
 kind: Service 
 metadata:
   name: clusterip-service 
@@ -27,4 +12,19 @@ spec:
   - protocol: TCP 
     port: 8080            # Internal access port for other pods
     targetPort: 80      # Target port inside the container 
+---
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: clusterip-pod
+  namespace: roboshop
+  labels: 
+    app: service 
+    type: clusterip 
+spec:
+  containers:
+  - name: clusterip-cont 
+    image: nginx:mainline-alpine3.24-perl
+    ports:
+    - containerPort: 80
 
