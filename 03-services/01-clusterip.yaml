@@ -10,7 +10,7 @@ spec:
     type: clusterip 
   ports:
   - protocol: TCP 
-    port: 8080            # Internal access port for other pods
+    port: 8080            # Internal access port for other pods and 80 u can access directtly curl <service name> but if u give 8080 curl <service name>:8080
     targetPort: 80      # Target port inside the container 
 ---
 apiVersion: v1 
