@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+Kind: ReplicaSet 
+metadata:
+  name: nginx-rs 
+  namespace: roboshop
+spec:
+  replicas: 2
+  selector:
+    matchlabels:          #this labels should match the pod labels 
+      app: nginx 
+      type: replicaset
+  template:
+    metadata:
+      labels:                             #this are pod labels 
+        app: nginx
+        type: replicaset
+    spec:
+      containers:
+      - name: rs-container
+        image: nginx:mainline-alpine3.24-perl
+        ports:
+        - containerPort: 80
