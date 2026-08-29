@@ -22,6 +22,7 @@ metadata:
 spec:
   storageClassName:
   volumeName: ebs-static-pv
+  volumeMode: Block
   accessModes:
   - ReadWriteOnce 
   resources:
