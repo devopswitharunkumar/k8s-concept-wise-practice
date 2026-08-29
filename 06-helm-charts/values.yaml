@@ -1,0 +1,5 @@
+replicaCount: 1
+image: 
+  name: nginx 
+port:
+  containerPort: 80
