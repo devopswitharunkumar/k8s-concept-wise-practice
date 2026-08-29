@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume              #not a namespace level cluster level
 metadata:
-  name: ebc-static-pv
+  name: ebs-static-pv
 spec:
   capacity:
     storage: 10Gi
