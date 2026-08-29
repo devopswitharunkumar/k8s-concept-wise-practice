@@ -45,8 +45,8 @@ spec:
     volumeMounts:
     - name: ebs-static-vol 
       mountPath: /usr/share/nginx/html
-    nodeSelector:
-      zone: 1a
+  nodeSelector:
+    zone: 1a
   volumes: 
   - name: ebs-static-nginx-vol 
     persistentVolumeClaim:
