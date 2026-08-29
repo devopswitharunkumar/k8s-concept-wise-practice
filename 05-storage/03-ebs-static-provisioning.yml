@@ -43,7 +43,7 @@ spec:
     ports:
     - containerPort: 80
     volumeMounts:
-    - name: ebs-static-vol 
+    - name: ebs-static-nginx-vol 
       mountPath: /usr/share/nginx/html
   nodeSelector:
     zone: 1a
