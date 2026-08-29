@@ -17,11 +17,11 @@ spec:
 apiVersion: v1 
 kind: PersistentVolumeClaim     #namespace scoped 
 metadata:
-  name: ebc-static-pvc 
+  name: ebs-static-pvc 
   namespace: roboshop
 spec:
   storageClassName:
-  volumeName: ebc-static-pv
+  volumeName: ebs-static-pv
   accessModes:
   - ReadWriteOnce 
   resources:
@@ -50,7 +50,7 @@ spec:
   volumes: 
   - name: ebs-static-nginx-vol 
     persistentVolumeClaim:
-      claimName: ebc-static-pvc 
+      claimName: ebs-static-pvc 
 ---
 apiVersion: v1 
 kind: Service
