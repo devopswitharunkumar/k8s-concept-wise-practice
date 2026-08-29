@@ -4,7 +4,7 @@ metadata:
   name: ebs-dynamic-pvc 
   namespace: roboshop
 spec:
-  storageClassName: "ebs-dynamic-sc"
+  storageClassName: ebs-dynamic-sc
   accessModes:
   - ReadWriteOnce
   resources:
