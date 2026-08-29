@@ -7,7 +7,7 @@ spec:
   - ReadWriteMany 
   volumeMode: Filesystem
   capacity:
-    storage: 5Gi        # EFS expands automatically; this is a placeholder
+    storage: 10Gi        # EFS expands automatically; this is a placeholder
   storageClassName: "" 
   persistentVolumeReclaimPolicy: Retain
   csi:  
