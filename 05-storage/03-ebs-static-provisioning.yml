@@ -12,7 +12,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle:                     #manually created ebs volume id 
+    volumeHandle: vol-0b7124f606f06f4df                     #manually created ebs volume id 
 ---
 apiVersion: v1 
 kind: PersistentVolumeClaim     #namespace scoped 
@@ -46,7 +46,7 @@ spec:
     - name: ebs-static-vol 
       mountPath: /usr/share/nginx/html
     nodeSelector:
-      zone: 1b
+      zone: 1a
   volumes: 
   - name: ebs-static-nginx-vol 
     persistentVolumeReclaim:
