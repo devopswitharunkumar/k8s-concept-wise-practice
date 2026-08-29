@@ -7,8 +7,7 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  volumeMode: Block
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Delete
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
@@ -22,7 +21,6 @@ metadata:
 spec:
   storageClassName:
   volumeName: ebs-static-pv
-  volumeMode: Block
   accessModes:
   - ReadWriteOnce 
   resources:
