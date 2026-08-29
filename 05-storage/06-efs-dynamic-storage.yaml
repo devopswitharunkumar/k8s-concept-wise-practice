@@ -4,10 +4,9 @@ metadata:
   name: efs-dynamic-pvc 
   namespace: roboshop 
 spec:
-  storageClassName: efs-dynamic-sc
+  storageClassName: efs-dynamic
   accessModes:
   - ReadWriteMany
-  volumeName: efs-dynamic-pv 
   resources:
     requests:
       storage: 10Gi 
