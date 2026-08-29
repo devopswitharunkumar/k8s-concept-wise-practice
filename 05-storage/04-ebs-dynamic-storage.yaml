@@ -8,7 +8,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   resources:
-    request:
+    requests:
       storage: 1Gi 
 ---
 apiVersion: v1 
@@ -16,7 +16,7 @@ kind: Pod
 metadata:
   name: ebs-dynamic-pod 
   namespace: roboshop
-  lables:
+  labels:
     app: ebs-dynamic
     type: dynamic
 spec:
@@ -27,10 +27,10 @@ spec:
     - containerPort: 80 
     volumeMounts:
     - name: ebs-dynamic-vol             #volume name 
-      mountpath: /usr/share/nginx/html
+      mountPath: /usr/share/nginx/html
   volumes:
   - name: ebs-dynamic-vol
-    PersistentVolumeClaim:
+    persistentVolumeClaim:
       claimName: ebs-dynamic-pvc 
 
 ---
