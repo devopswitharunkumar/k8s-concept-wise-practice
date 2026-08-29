@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany 
-  volumeMode: FileSystem
+  volumeMode: Filesystem
   capacity:
     storage: 5Gi        # EFS expands automatically; this is a placeholder
   storageClassName: "" 
